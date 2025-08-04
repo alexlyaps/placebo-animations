@@ -1,0 +1,46 @@
+@use "./variables" as *;
+
+@font-face {
+  font-family: "Manrope-Light";
+  src: url("~/assets/fonts/Manrope-Light.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+}
+
+html {
+  // font-family: ;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  // background-color: ;
+  // color: ;
+}
+
+body {
+  overflow-x: hidden;
+  position: relative;
+}
+
+li {
+  list-style: none;
+  background-color: none;
+}
+
+a {
+  color: $white;
+  background-color: transparent;
+  border: none;
+  text-decoration: none;
+}
+
+.fade-item {
+  opacity: 0;
+  transition: opacity 1s ease-out;
+  /* при желании можно добавить translateY для «входа» сверху */
+  transform: translateY(20px);
+  transition-property: opacity, transform;
+}
+
+.fade-item.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
