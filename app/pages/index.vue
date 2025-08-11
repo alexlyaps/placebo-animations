@@ -1,9 +1,11 @@
 <template>
-  <div></div>
+  <Hero />
 </template>
 
 <script setup lang="ts">
 import "modern-normalize";
 </script>
 
-<style scoped lang="scss"></style>
+<style lang="scss">
+@use "~/assets/scss/main.scss" as *;
+</style>
