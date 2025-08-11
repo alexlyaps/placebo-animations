@@ -10,6 +10,7 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "modern-normalize": "^3.0.1",
     "motion": "^12.23.12",
     "motion-v": "^1.7.0",
     "nuxt": "^4.0.1",
