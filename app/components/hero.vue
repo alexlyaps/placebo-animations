@@ -42,7 +42,6 @@ div {
 <script setup lang="ts">
 import { gsap } from "gsap";
 import { SplitText } from "gsap/SplitText";
-import { linearGradient } from "motion/react-client";
 gsap.registerPlugin(SplitText);
 
 onMounted(() => {
