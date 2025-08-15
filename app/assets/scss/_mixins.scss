@@ -1,0 +1,50 @@
+@mixin generate-fade-classes($max: 100, $step: 10) {
+  $count: $max / $step;
+  @for $i from 0 through $count {
+    $value: $i * $step;
+    .fade-#{$value} {
+      opacity: $value / 100;
+      transition: opacity 0.5s ease-out;
+    }
+  }
+}
+
+@mixin generate-scale-classes($max: 100, $step: 10) {
+  $count: $max / $step;
+  @for $i from 0 through $count {
+    $value: $i * $step;
+    .scale-#{$value} {
+      transform: scale($value / 100);
+      transition: transform 0.5s ease-out;
+    }
+  }
+}
+
+@mixin generate-translate-classes($axis: y, $max: 100, $step: 10, $unit: px) {
+  $count: $max / $step;
+
+  @for $i from 0 through $count {
+    $value: $i * $step;
+
+    .translate-#{$axis}-#{$value} {
+      @if $axis == x {
+        transform: translateX(#{$value}#{$unit});
+      } @else if $axis == y {
+        transform: translateY(#{$value}#{$unit});
+      }
+      transition: transform 0.5s ease-out;
+    }
+  }
+
+  @for $i from 1 through $count {
+    $value: -$i * $step;
+    .translate-#{$axis}-neg-#{abs($value)} {
+      @if $axis == x {
+        transform: translateX(#{$value}#{$unit});
+      } @else if $axis == y {
+        transform: translateY(#{$value}#{$unit});
+      }
+      transition: transform 0.5s ease-out;
+    }
+  }
+}

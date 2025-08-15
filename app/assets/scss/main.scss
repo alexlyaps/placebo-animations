@@ -1,62 +1,79 @@
 @use "./variables" as *;
+@use "./animations" as *;
 
 @font-face {
-  font-family: "IgraSans";
-  src: url("~/assets/fonts/IgraSans.woff2") format("woff2");
+  font-family: "RG-SpaciousBook";
+  src: url("~/assets/fonts/RG-SpaciousBook.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
-  font-family: "Darline-Serif-Light";
-  src: url("~/assets/fonts/Darline-Serif-Light.woff2") format("woff2");
-  font-weight: 300;
+  font-family: "SF-Pro-Display-Medium";
+  src: url("~/assets/fonts/SF-Pro-Display-Medium.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "SF-Pro-Display-Regular";
+  src: url("~/assets/fonts/SF-Pro-Display-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "SF-Pro-Display-Ultralight";
+  src: url("~/assets/fonts/SF-Pro-Display-Ultralight.woff2") format("woff2");
+  font-weight: 100;
   font-style: normal;
 }
 
 html {
-  font-family: IgraSans;
+  font-family: SF-Pro-Display-Regular;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: rgba(242, 236, 230, 1);
-  color: rgba(97, 71, 71, 1);
-  font-size: clamp(14px, 1vw, 20px);
-  line-height: clamp(18px, 1.4vw, 28px);
+  background-color: #000;
+  color: #d9d9d9;
+  font-size: clamp(7.5px, 0.75vw, 15px);
+  line-height: 1.265;
   max-width: 100vw;
   scroll-behavior: smooth;
   overflow-x: hidden;
+  text-transform: uppercase;
+  text-align: left;
 }
 
 body {
   overflow-x: hidden;
   position: relative;
+  // background-color: #000;
   max-width: 100vw;
+  padding-bottom: 20vw;
 }
 
 p {
   margin-top: 0;
 }
 
+h1,
 h2,
 h3 {
-  color: rgba(188, 117, 95, 1);
-  font-family: Darline-Serif-Light;
-  font-size: clamp(60px, 5.5vw, 105px);
-  font-weight: 300;
-  text-align: center;
-  line-height: clamp(55px, 5.1vw, 97px);
+  color: #fff;
+  font-weight: 400;
   text-transform: uppercase;
-  margin: 0 auto;
-  min-width: 350px;
+  margin: 0;
 }
 
-h3 {
-  font-size: clamp(50px, 5vw, 95px);
-  margin-bottom: clamp(15px, 1vw, 300px);
-}
-
-p {
+h1 {
+  font-size: clamp(90px, 20.5vw, 390px);
   text-align: center;
+  line-height: clamp(80px, 17.5vw, 395px);
+}
+
+h2 {
+  font-size: clamp(30px, 3vw, 70px);
+  line-height: 1.1;
 }
 
 li {
@@ -71,22 +88,4 @@ a {
   background-color: transparent;
   border: none;
   text-decoration: none;
-}
-
-@media (max-width: 500px) {
-}
-@media (max-width: 400px) {
-}
-
-.fade-item {
-  opacity: 0;
-  transition: opacity 1s ease-out;
-  /* при желании можно добавить translateY для «входа» сверху */
-  transform: translateY(20px);
-  transition-property: opacity, transform;
-}
-
-.fade-item.visible {
-  opacity: 1;
-  transform: translateY(0);
 }

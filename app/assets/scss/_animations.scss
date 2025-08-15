@@ -1,0 +1,18 @@
+@use "./mixins" as *;
+
+@include generate-fade-classes(100, 10);
+@include generate-scale-classes(100, 10);
+@include generate-translate-classes("y", 100, 10);
+@include generate-translate-classes("x", 100, 10);
+
+.fade-item {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.animate-image {
+  opacity: 0.5;
+  transition: opacity 2s ease-out, transform 2s ease-out;
+  transform: translateX(-10%);
+}
